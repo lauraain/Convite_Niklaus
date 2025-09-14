@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Convite - Niklaus 3 anos</title>
+  <style>
+    :root {
+      --bg:#0b1220;
+      --card:#ffffff;
+      --accent:#e21b2d;
+      --accent-2:#0b66b3;
+      --paper: #f7f7f9;
+      --radius: 18px;
+      --text:#0b1220;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      height:100%;
+      font-family:'Comic Sans MS','Comic Neue',cursive;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg) 0%, #07101a 60%);
+      overflow-x:hidden;
+    }
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      position:relative;
+    }
+    .card{
+      width:100%;
+      max-width:900px;
+      background:linear-gradient(180deg,var(--paper),#fff);
+      border-radius:var(--radius);
+      box-shadow:0 18px 40px rgba(3,10,18,0.6);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr 420px;
+      position:relative;
+      z-index:1;
+    }
+    .hero{
+      position:relative;
+      padding:32px 20px;
+      background:linear-gradient(180deg,var(--accent) 0%, var(--accent-2) 100%);
+      color:white;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .hero .badge{
+      font-weight:700;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      background:rgba(0,0,0,0.16);
+      padding:6px 10px;
+      border-radius:999px
+    }
+    .title{
+      margin-top:18px;
+      font-size:36px;
+      line-height:1.1;
+      font-weight:800;
+      text-shadow:2px 2px 0 #000
+    }
+    .subtitle{
+      opacity:0.95;
+      margin-top:8px;
+      font-size:16px
+    }
+    .details{
+      margin-top:22px;
+      background:rgba(255,255,255,0.1);
+      padding:12px;
+      border-radius:12px;
+    }
+    .details b{display:block}
+
+    /* Foto do Niklaus */
+    .photo-niklaus {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      margin-top: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .spiderman-img{
+      position:absolute;bottom:10px;right:10px;
+      width:100px;height:auto;
+    }
+    .info{padding:20px;background:var(--card);}
+    .info h3{margin:4px 0 10px;font-size:20px;color:var(--accent-2)}
+    .info p{margin:0 0 8px;color:#333}
+    .info .big{font-size:20px;font-weight:700;color:var(--accent)}
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:10px;
+      background:var(--accent);
+      color:white;
+      font-weight:bold;
+      text-decoration:none;
+      margin-top:20px;
+      text-align:center;
+    }
+
+    /* Teias flutuando */
+    .webs{
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      pointer-events:none;
+      z-index:9999;
+    }
+    .webs span{
+      position:absolute;
+      font-size:40px;
+      opacity:0.2;
+      animation:float 15s linear infinite;
+    }
+    .webs span:nth-child(1){top:10%;left:5%;animation-duration:18s;}
+    .webs span:nth-child(2){top:20%;right:10%;animation-duration:12s;}
+    .webs span:nth-child(3){bottom:15%;left:15%;animation-duration:22s;}
+    .webs span:nth-child(4){bottom:10%;right:20%;animation-duration:16s;}
+    .webs span:nth-child(5){top:50%;left:40%;animation-duration:20s;}
+    .webs span:nth-child(6){top:30%;right:40%;animation-duration:14s;}
+    @keyframes float{
+      0%{transform:translateY(0) rotate(0deg)}
+      50%{transform:translateY(-30px) rotate(180deg)}
+      100%{transform:translateY(0) rotate(360deg)}
+    }
+
+    /* Responsividade */
+    @media(max-width:768px){
+      .card{grid-template-columns:1fr}
+      .spiderman-img{position:relative;right:0;margin-top:20px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Teias flutuando -->
+  <div class="webs">
+    <span>🕸️</span>
+    <span>🕸️</span>
+    <span>🕸️</span>
+    <span>🕸️</span>
+    <span>🕸️</span>
+    <span>🕸️</span>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <section class="hero">
+        <span class="badge">Convite Especial</span>
+        <h1 class="title">Niklaus Lima <br><small style="font-size:18px;font-weight:600;opacity:0.95">Faz 3 anos</small></h1>
+        
+        <!-- Foto do Niklaus -->
+        <img src="WhatsApp Image 2025-09-14 at 14.53.26.jpeg" 
+             alt="Foto do Niklaus"
+             class="photo-niklaus"/>
+
+        <p class="subtitle">Venha celebrar com muita diversão, brincadeira e teias do Homem-Aranha!</p> 
+
+        <div class="details">
+          <div><b>Quando:</b> Sábado, 20/09 — 16:00</div>
+          <div><b>Onde:</b> Espaço do Raimundinho</div>
+        </div>
+
+        <img src="bolo.jpeg" alt="Homem-Aranha" class="spiderman-img"/>
+      </section>
+
+      <aside class="info">
+        <h3>Você está convidado!</h3>
+        <p class="big">Aniversário de 3 anos do Niklaus</p>
+        <p>Prepare-se para muita aventura, docinhos, bolo e imaginação com o tema do Homem-Aranha!</p>
+
+        <a href="album.html" class="btn">Ver Álbum</a>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

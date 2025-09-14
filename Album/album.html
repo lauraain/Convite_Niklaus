@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Álbum do Niklaus</title>
+  <style>
+    body{
+      margin:0;
+      font-family:'Comic Sans MS','Comic Neue',cursive;
+      background:#f7f7f9;
+      color:#333;
+    }
+    header{
+      background:#e21b2d;
+      color:white;
+      padding:16px;
+      text-align:center;
+    }
+    header a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    h1{margin:0;font-size:24px}
+    .album{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:16px;
+      padding:20px;
+    }
+    .album div{text-align:center}
+    .album h3{margin:10px 0;color:#0b66b3}
+    .album img{
+      width:100%;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+    @media(max-width:600px){
+      h1{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Álbum do Niklaus</h1>
+    <a href="index.html">← Voltar ao convite</a>
+  </header>
+  <div class="album">
+    <div>
+      <h3>1 ano</h3>
+      <img src="" alt="Niklaus 1 ano">
+    </div>
+    <div>
+      <h3>2 anos</h3>
+      <img src="" alt="Niklaus 2 anos">
+    </div>
+    <div>
+      <h3>3 anos</h3>
+      <img src="" alt="Niklaus 3 anos">
+    </div>
+  </div>
+</body>
+</html>

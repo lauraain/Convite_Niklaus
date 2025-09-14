@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">k
+  <title>Álbum do Niklaus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #001f3f, #003366);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin: 20px;
+      font-size: 2.2em;
+      color: #ff0000;
+      text-shadow: 2px 2px 5px black;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Carrossel */
+    .carousel {
+      position: relative;
+      width: 95%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+      z-index: 10;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Botões */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      font-size: 2.5em;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 20;
+    }
+
+    .carousel-btn.left {
+      left: 15px;
+    }
+
+    .carousel-btn.right {
+      right: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10;
+      position: relative;
+    }
+
+    .button:hover {
+      background-color: #cc0000;
+    }
+
+    /* Teias de aranha animadas */
+    .spider-web {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/2/2d/Spider_web_icon.svg') no-repeat center;
+      background-size: contain;
+      animation: floatWebs 12s linear infinite;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes floatWebs {
+      0% { transform: translateY(-120px) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>📸 Álbum do Niklaus 📸</h1>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <img src="Album/1.1.jpeg" alt="Niklaus bebê">
+      <img src="Album/1.2.jpeg" alt="Homem Aranha">
+      <img src="Album/1.jpeg" alt="Foto exemplo 1">
+      <img src="Album/10.jpeg" alt="Foto exemplo 2">
+      <img src="Album/11.jpeg" alt="Foto exemplo 3">
+      <img src="Album/12.jpeg" alt="Foto exemplo 4">
+       <img src="Album/13.jpeg" alt="Niklaus bebê">
+      <img src="Album/14.jpeg" alt="Homem Aranha">
+      <img src="Album/16.jpeg" alt="Foto exemplo 1">
+      <img src= "Album/17.jpeg" alt="Foto exemplo 2">
+      <img src="Album/18.jpeg" alt="Foto exemplo 3">
+      <img src="Album/19.jpeg" alt="Foto exemplo 4">
+      <img src="Album/2.jpeg" alt="Niklaus bebê">
+      <img src="Album/20.jpeg" alt="Homem Aranha">
+      <img src="Album/21.jpeg" alt="Foto exemplo 1">
+      <img src="Album/22.jpeg" alt="Foto exemplo 2">
+      <img src="Album/23.jpeg" alt="Foto exemplo 3">
+      <img src="Album/24.jpeg" alt="Foto exemplo 4">
+       <img src="Album/25.jpeg" alt="Niklaus bebê">
+      <img src="Album/26.jpg" alt="Homem Aranha">
+      <img src="Album/27.jpeg" alt="Foto exemplo 1">
+      <img src= "Album/28.jpeg" alt="Foto exemplo 2">
+      <img src="Album/4.jpeg" alt="exemplo 3">
+      <img src="Album/5.jpeg" alt="Foto exemplo 4">
+      <img src="Album/6.jpeg" alt="Foto exemplo 4">
+      <img src="Album/7.jpeg" alt="Foto exemplo 4">
+      <img src="Album/8.jpeg" alt="Foto exemplo 4">
+    </div>
+    <button class="carousel-btn left">❮</button>
+    <button class="carousel-btn right">❯</button>
+  </div>
+
+  <a href="index.html" class="button">⬅️ Voltar ao Convite</a>
+
+  <!-- Script do carrossel -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-btn.right');
+    const prevButton = document.querySelector('.carousel-btn.left');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    // Passagem automática mais lenta (7 segundos)
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 7000);
+  </script>
+
+  <!-- Teias dinâmicas -->
+  <script>
+    function createWeb() {
+      const web = document.createElement("div");
+      web.classList.add("spider-web");
+      web.style.left = Math.random() * window.innerWidth + "px";
+      web.style.animationDuration = (8 + Math.random() * 6) + "s";
+      document.body.appendChild(web);
+
+      setTimeout(() => { web.remove(); }, 12000);
+    }
+
+    // Mais teias por vez
+    setInterval(createWeb, 500);
+  </script>
+</body>
+</html>
